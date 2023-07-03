@@ -8,6 +8,16 @@ Features:
 - 7 segment display
 
 # version 2
+RPi Pico based
+
+Features:
+- Continuity checker
+- Voltage detector
+- 7 segment display
+- LCD Screen + Rotary Encoder (3 modes)
+  - Voltmeter
+  - Clock selection
+  - IC tester
 
 # Collaborators
 [@riyasach189](https://www.github.com/riyasach189)
