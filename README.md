@@ -1,4 +1,11 @@
 # version 1
+Arduino based
+
+Features:
+- Continuity checker
+- Voltage detector
+- 3 clock signals - 0.1 Hz, 1 Hz, 10 Hz
+- 7 segment display
 
 # version 2
 
