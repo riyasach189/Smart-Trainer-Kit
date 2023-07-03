@@ -1,5 +1,6 @@
-# Smart Trainer Kit
-This is the code for a simple Digital Trainer kit using an Arduino. Will add more functionality in the future.
+# version 1
+
+# version 2
 
 # Collaborators
 [@riyasach189](https://www.github.com/riyasach189)
