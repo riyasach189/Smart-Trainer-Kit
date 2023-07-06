@@ -92,3 +92,4 @@ def or_CD4071():
             matrix[i] = 1
         else:
             matrix[i] = 0
+    return matrix

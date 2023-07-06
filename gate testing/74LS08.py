@@ -94,3 +94,4 @@ def and_74LS08():
         else:
             matrix[i] = 0
     
+    return matrix

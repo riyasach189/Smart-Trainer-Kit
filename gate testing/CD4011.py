@@ -92,3 +92,4 @@ def nand_CD4011():
             matrix[i] = 1
         else:
             matrix[i] = 0
+    return matrix

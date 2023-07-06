@@ -92,3 +92,4 @@ def and_CD4081():
             matrix[i] = 1
         else:
             matrix[i] = 0
+    return matrix

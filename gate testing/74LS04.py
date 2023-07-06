@@ -76,3 +76,5 @@ def not_74LS04():
             matrix[i] = 1
         else:
             matrix[i] = 0
+
+    return matrix

@@ -92,3 +92,4 @@ def xnor_CD4077():
             matrix[i] = 1
         else:
             matrix[i] = 0
+    return matrix
