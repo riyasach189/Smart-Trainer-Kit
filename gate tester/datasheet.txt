@@ -1,0 +1,71 @@
+4 5 6 7
+
+9 10 11 12
+
+24 25 26 27
+
+32 34
+
+
+74LS04
+# not
+# vcc io io io
+# io io io gnd
+
+
+74LS08
+# and
+# vcc iio iio
+# iio iio gnd
+
+
+CD4001
+# nor
+# vcc iio oii
+# iio oii gnd
+
+
+CD4011
+# nand
+# vcc iio oii
+# iio oii gnd
+
+
+CD4070# xor
+# vcc iio oii
+# iio oii gnd
+
+
+CD4071
+# or
+# vcc iio oii
+# iio oii gnd
+
+
+CD4077
+# xnor
+# vcc iio oii
+# iio oii gnd
+
+
+CD4081
+# and
+# vcc iio oii
+# iio oii gnd
+
+
+SN74LS157
+# mux
+# vcc enable d1 d2 o d1 d2 o
+# select d1 d2 o d1 d2 o gnd
+
+
+CD4013B
+# d flip flop
+# vcc q q` clock setq` d set q
+# q q` clock setq` d set q gnd
+
+
+74LS153
+# 4x1 mux
+# dunno ._.1
