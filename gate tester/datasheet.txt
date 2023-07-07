@@ -31,7 +31,8 @@ CD4011
 # iio oii gnd
 
 
-CD4070# xor
+CD4070
+# xor
 # vcc iio oii
 # iio oii gnd
 
