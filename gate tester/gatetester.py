@@ -1,7 +1,8 @@
 
 def gatetester(current_IC):
 #for not gate change this to whatever ndex is used for other ICs
-    import machine
+    exec("import machine")
+    current_IC = string_to_index(current_IC)
 
     gpio=[4,5,6,7,9,10,11,12,24,25,26,27,32,34]
     pinoutlist=[
@@ -103,7 +104,48 @@ def gatetester(current_IC):
             if truthtablelist[current_IC][testcasecount][i] == pinval:
                 continue
             else:
-                testcaseerror.append(gpio[i])
+                testcaseerror.append(gpio_to_gate(i, current_IC))
 
     return testcaseerror
+
+
+def gpio_to_gate(num, ic):
+    if ic in [0,1,2,3,4,5,6,7]:
+        if num < 6:
+            return num + 1
+        else:
+            return num
+    elif ic == 8:
+        if num < 8:
+            return num + 1
+        else:
+            return num + 2
+
+    
+
+def string_to_index(ic):
+    match ic:
+        case "74LS04":
+            return 0
+        case "74LS08":
+            return 1
+        case "CD4001":
+            return 2
+        case "CD4011":
+            return 3
+        case "CD4070":
+            return 4
+        case "CD4071":
+            return 5
+        case "CD4077":
+            return 6
+        case "CD4081":
+            return 7
+        case "SN74LS157":
+            return 8
+        case "CD4013B":
+            return 9
+        case "74LS153":
+            return 10
+        
 gatetester(0)
