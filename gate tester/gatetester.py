@@ -1,3 +1,4 @@
+
 def gatetester(current_IC):
 #for not gate change this to whatever ndex is used for other ICs
     import machine
@@ -82,17 +83,14 @@ def gatetester(current_IC):
             [1,0,1,0,0,1,0,0,1,0,0,1,0,0],
             [1,1,0,1,1,0,1,1,0,1,1,0,1,0],
             [1,1,1,1,1,1,1,1,1,1,1,1,1,0]
-        ],
-        [
-            
         ]
     ]
 
     testcasecountlimit = len(truthtablelist[current_IC])
     pinval = None
+    testcaseerror = []
 
     for testcasecount in range(testcasecountlimit):
-        testcaseerror = []
         for i in range(len(pinoutlist)):
             exec('dip_' + str(i) + '=machine.Pin(' + str(gpio[i]) + ', Pin.' + pinoutlist[current_IC][i] + ')')
             if pinoutlist[current_IC][i] == 'OUT':
@@ -101,8 +99,11 @@ def gatetester(current_IC):
         for i in range(len(pinoutlist)):
             if pinoutlist[current_IC][i] == 'OUT':
                 continue
-            exec('pinval=dip_' + str(i) + 'value()')
+            exec('pinval=dip_' + str(i) + '.value()')
             if truthtablelist[current_IC][testcasecount][i] == pinval:
                 continue
             else:
-                testcaseerror.append(i)
+                testcaseerror.append(gpio[i])
+
+    return testcaseerror
+gatetester(0)
