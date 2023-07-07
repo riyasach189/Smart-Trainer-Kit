@@ -124,28 +124,7 @@ def gpio_to_gate(num, ic):
     
 
 def string_to_index(ic):
-    match ic:
-        case "74LS04":
-            return 0
-        case "74LS08":
-            return 1
-        case "CD4001":
-            return 2
-        case "CD4011":
-            return 3
-        case "CD4070":
-            return 4
-        case "CD4071":
-            return 5
-        case "CD4077":
-            return 6
-        case "CD4081":
-            return 7
-        case "SN74LS157":
-            return 8
-        case "CD4013B":
-            return 9
-        case "74LS153":
-            return 10
+    ics = {"74LS04":0, "74LS08":1, "CD4001":2, "CD4011":3, "CD4070":4, "CD4071":5, "CD4077":6, "CD4081":7, "SN74LS157":8, "CD4013B":9, "74LS153":10}
+    return ics[ic]
         
 gatetester(0)
