@@ -14,9 +14,8 @@ Features:
 - Continuity checker
 - Voltage detector
 - 7 segment display
-- LCD Screen + Rotary Encoder (3 modes)
+- LCD Screen + Rotary Encoder
   - Voltmeter
-  - Clock selection
   - IC tester
 
 # Collaborators
