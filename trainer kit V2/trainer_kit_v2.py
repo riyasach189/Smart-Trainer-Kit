@@ -2,11 +2,12 @@ import machine
 from rotary_encoder_classes import *
 import utime
 from pico_i2c_lcd import I2cLcd
-import gate_tester
+from gate__tester import *
 i2c = machine.I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400000)
 
 #gate tester
 ic_tester_screen = 0
+ic_selected = ""
 
 #voltmeter
 pot_val = machine.ADC(0)
@@ -41,37 +42,37 @@ lcd.putstr(main_menu_options[pointer])
 
 #Main Program
 while True:
-    
+
     #scrolling
     Qtr_Cntr_1 = round(Enc_1.Enc_Counter/4)
     if Qtr_Cntr_1 != Last_Qtr_Cntr_1:
         print(Qtr_Cntr_1)
-        
+
         if (pointer >= 0):
-            
+
             if (Qtr_Cntr_1 > Last_Qtr_Cntr_1):
                 pointer = (pointer + 1)%2
-                
+
             else:
                 pointer = (pointer - 1)%2
-            
+
             lcd.clear()
             lcd.putstr(main_menu_options[pointer])
-            
+
         elif (ic_menu_pointer >= 0):
-            
+
             if (Qtr_Cntr_1 > Last_Qtr_Cntr_1):
                 ic_menu_pointer = (ic_menu_pointer + 1)%ic_options
-                
+
             else:
                 ic_menu_pointer = (ic_menu_pointer - 1)%ic_options
-            
+
             lcd.clear()
             lcd.putstr(ic_tester_options[ic_menu_pointer])
-            
+
         last_Enc_Counter_1 = Enc_1.Enc_Counter
         Last_Qtr_Cntr_1 = Qtr_Cntr_1
-        
+
     #clicking
     if (Enc_1_SW.value() == True) and (Enc_1_SW_State == "DOWN"):
         Enc_1_SW_State = "UP"
@@ -84,20 +85,29 @@ while True:
             lcd.clear()
             ic_menu_pointer = 0
             lcd.putstr(ic_tester_options[ic_menu_pointer])
-            
+
         elif (pointer == -1):
             ic_tester_screen = 1
+            ic_selected = ic_tester_options[ic_menu_pointer]
             pointer = -5
             ic_menu_pointer = -1
             lcd.clear()
-            lcd.putstr("IC Tester Screen")
-            
+            gates_not_working = gatetester(ic_selected)
+
+            if (len(gates_not_working) == 4):
+                lcd.putstr("   " + str(gates_not_working[0]) + "       " + str(gates_not_working[1]) + "   ")
+                lcd.putstr("   " + str(gates_not_working[2]) + "       " + str(gates_not_working[3]) + "   ")
+
+            elif(len(gates_not_working) == 6):
+                lcd.putstr("   " + str(gates_not_working[0]) + "   " + str(gates_not_working[1]) + "   " + str(gates_not_working[2]) + "   ")
+                lcd.putstr("   " + str(gates_not_working[3]) + "   " + str(gates_not_working[4]) + "   " + str(gates_not_working[5]) + "   ")
+
         elif (pointer == -5):
             ic_tester_screen = 0
             pointer = 0
             lcd.clear()
             lcd.putstr(main_menu_options[pointer])
-            
+
         elif (pointer == 1):
             Enc_1_SW_State = "UP"
             pointer = -2
@@ -109,10 +119,8 @@ while True:
                 utime.sleep(0.5)
                 if (Enc_1_SW.value() == False) and (Enc_1_SW_State == "UP"):
                     break
-                
+
         elif (pointer == -2):
             pointer = 0
             lcd.clear()
             lcd.putstr(main_menu_options[pointer])
-
-
