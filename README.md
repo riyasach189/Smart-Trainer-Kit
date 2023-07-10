@@ -51,9 +51,9 @@
 
 ## Resources:
 - KiCad - PCB Design
-- 7 Segment Display with 4511 IC
-- Arduino for Beginners
-- How to Use DPDT Switches
+- [7 Segment Display with 4511 IC](https://youtu.be/KZTwr95eINc)
+- [Arduino for Beginners](https://youtu.be/d8_xXNcGYgo)
+- [How to Use DPDT Switches](https://youtu.be/f0EMblUCp54)
 
 # Version 2
 ## Components:
@@ -63,21 +63,14 @@
 ## Problems Encountered:
 
 ## Resources:
-- Rotary Encoder with RPi Pico
-- RPi Pico for Beginners
-- Connect LCD to RPi Pico using I2C
-- 555 Timer IC in Astable Mode
-- 555 Timer Frequency Calculator in Astable Mode
+- [Rotary Encoder with RPi Pico](https://youtu.be/sgnEUxeNxpM)
+- [RPi Pico for Beginners](https://youtu.be/1WDagiA8fdU)
+- [Connect LCD to RPi Pico using I2C](https://www.tomshardware.com/how-to/lcd-display-raspberry-pi-pico)
+- [555 Timer IC in Astable Mode](https://youtu.be/iJYm_BGqa1A)
+- [555 Timer Frequency Calculator in Astable Mode](https://ohmslawcalculator.com/555-astable-calculator)
 
 # Contributors:
 - Dr. Rahul Gupta - Manager, Research Labs (Supervisor of the Project)
 - Riya Sachdeva - EVE, BTech 2026
 - Surat Sathi Samanta - EVE, BTech 2026
 - Aarav Mathur - CSSS, Btech 2026
-
-# Collaborators
-[@riyasach189](https://www.github.com/riyasach189)
-
-[@surat-ss](https://www.github.com/surat-ss)
-
-[@13100D](https://github.com/13100D)
