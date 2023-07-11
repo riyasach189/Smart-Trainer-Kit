@@ -1,9 +1,11 @@
 ## Background and Motivation:
-The Digital Trainer Kit serves as a vital tool for facilitating learning, teaching, and testing of digital electronic circuits. It plays a crucial role in the laboratory component of the Digital Circuits course offered in Semester 1 at IIIT-D. However, the current trainer kits deployed in the ECE labs suffer from drawbacks such as being bulky, expensive, and featuring redundant functions.
+- The Digital Trainer Kit serves as a vital tool for facilitating learning, teaching, and testing of digital electronic circuits.
+- It plays a crucial role in the laboratory component of the Digital Circuits course offered in Semester 1 at IIIT-D.
+- However, the current trainer kits deployed in the ECE labs suffer from drawbacks such as being bulky, expensive, and featuring redundant functions.
 
 ## Objectives:
-1. To find alternatives that are compact, lightweight, and reasonably priced, without compromising essential functionalities.
-2. To enhance the versatility and functionality of the proposed alternative, a microcontroller will be incorporated into the design. This addition will provide opportunities for future expansion and the inclusion of advanced features, empowering students to explore more complex digital circuits.
+- To find alternatives that are compact, lightweight, and reasonably priced, without compromising essential functionalities.
+- To enhance the versatility and functionality of the proposed alternative, a microcontroller will be incorporated into the design. This addition will provide opportunities for future expansion and the inclusion of advanced features, empowering students to explore more complex digital circuits.
 
 ## Version 1
 **Components:**
