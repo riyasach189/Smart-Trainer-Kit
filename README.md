@@ -66,7 +66,6 @@
   - LED
   - Passive Buzzer
   - Resistor (330 Ohm)
-  - 9V Battery
 - Clock Generator Circuit:
   - NE555 Timer ICs (x3)
   - LEDs (x3)
