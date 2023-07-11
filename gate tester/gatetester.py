@@ -1,11 +1,11 @@
 import machine
-
+import time
 def gatetester(current_IC):
 #for not gate change this to whatever index is used for other ICs
 
     current_IC = string_to_index(current_IC)
 
-    gpio=[4,5,6,7,9,10,11,12,24,25,26,27,32,34]
+    gpio=[16, 17, 18, 19, 20, 21, 22, 2, 3, 4, 5, 6, 7, 8]
     pinoutlist=[
         ['OUT','IN','OUT','IN','OUT','IN','OUT','OUT','IN','OUT','IN','OUT','IN','OUT'],  # 74LS04 not
         ['OUT','OUT','IN','OUT','OUT','IN','OUT','OUT','IN','OUT','OUT','IN','OUT','OUT'], # 74LS08 and
@@ -19,8 +19,8 @@ def gatetester(current_IC):
         ]
     truthtablelist=[
         [
-            [1,0,1,0,1,0,0,0,0,1,0,1,0,1],                                                # 74LS04 not
-            [0,1,0,1,0,1,0,0,1,0,1,0,1,0]
+            [0,1,0,1,0,1,0,0,1,0,1,0,1,0],
+            [1,0,1,0,1,0,0,0,0,1,0,1,0,1]                                                # 74LS04 not
         ],
         [
             [1,1,1,1,1,1,0,0,1,1,1,1,1,1],                                                # 74LS08 and
@@ -89,24 +89,32 @@ def gatetester(current_IC):
     ]
 
     testcasecountlimit = len(truthtablelist[current_IC])
-    pinval = None
     testcaseerror = []
-
     for testcasecount in range(testcasecountlimit):
-        for i in range(len(pinoutlist)):
-            exec('dip_' + str(i) + '=machine.Pin(' + str(gpio[i]) + ', machine.Pin.' + pinoutlist[current_IC][i] + ')')
+        for i in range(len(pinoutlist[current_IC])):
+            exec('dip_'+str(i)+'=machine.Pin(' + str(gpio[i]) + ', machine.Pin.' + pinoutlist[current_IC][i] + ')')
+            
             if pinoutlist[current_IC][i] == 'OUT':
-                exec('dip_' + str(i) + '.value(' + str(truthtablelist[current_IC][testcasecount][i]) + ')')
+                eval('dip_'+str(i) + '.value(' + str(truthtablelist[current_IC][testcasecount][i]) + ')')
                 
-        for i in range(len(pinoutlist)):
+        time.sleep(0.05)
+        
+        for i in range(len(pinoutlist[current_IC])):
+            #print(i)
+            #print(testcasecount, "HUHU")
             if pinoutlist[current_IC][i] == 'OUT':
                 continue
-            exec('pinval=dip_' + str(i) + '.value()')
+            
+            pinval = eval('dip_' + str(i) + '.value()')
             if truthtablelist[current_IC][testcasecount][i] == pinval:
                 continue
+            
             else:
+                #print("REAL: ", pinval, "EXPECTED: ", truthtablelist[current_IC][testcasecount][i], "PIN: ", i, "TEST CASE: ", testcasecount)
                 testcaseerror.append(gpio_to_gate(i, current_IC))
-
+                
+    #print(testcaseerror)
+    
     return list(set(testcaseerror))
 
 
@@ -115,10 +123,9 @@ def gpio_to_gate(num, ic):
         if num < 6:
             return num // 3
         else:
-            return (num - 2) % 3
-    elif ic == 1:
-        pass
-    elif ic == 8:
+            return (num - 2) // 3
+
+    elif ic == 0:
         if num < 8:
             return num // 2
         else:
