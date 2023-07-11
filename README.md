@@ -108,4 +108,4 @@ The Digital Trainer Kit serves as a vital tool for facilitating learning, teachi
 - Dr. Rahul Gupta - Manager, Research Labs (Supervisor of the Project)
 - [Riya Sachdeva - EVE, BTech 2026](https://github.com/riyasach189)
 - [Surat Sathi Samanta - EVE, BTech 2026](https://github.com/kio42069/)
-- [Aarav Mathur - CSSS, Btech 2026](https://github.com/13100d/)
+- [Aarav Mathur - CSSS, BTech 2026](https://github.com/13100d/)
