@@ -104,8 +104,8 @@ The Digital Trainer Kit serves as a vital tool for facilitating learning, teachi
 - [555 Timer IC in Astable Mode](https://youtu.be/iJYm_BGqa1A)
 - [555 Timer Frequency Calculator in Astable Mode](https://ohmslawcalculator.com/555-astable-calculator)
 
-##Contributors:
+## Contributors:
 - Dr. Rahul Gupta - Manager, Research Labs (Supervisor of the Project)
-- Riya Sachdeva - EVE, BTech 2026
-- Surat Sathi Samanta - EVE, BTech 2026
-- Aarav Mathur - CSSS, Btech 2026
+- [Riya Sachdeva - EVE, BTech 2026](https://github.com/riyasach189)
+- [Surat Sathi Samanta - EVE, BTech 2026](https://github.com/kio42069/)
+- [Aarav Mathur - CSSS, Btech 2026](https://github.com/13100d/)
