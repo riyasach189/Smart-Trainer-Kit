@@ -111,18 +111,19 @@ def gatetester(current_IC):
 
 
 def gpio_to_gate(num, ic):
-    if ic in [0,1,2,3,4,5,6,7]:
+    if ic in [1,2,3,4,5,6,7]:
         if num < 6:
-            return num + 1
+            return num // 3
         else:
-            return num
+            return (num - 2) % 3
+    elif ic == 1:
+        pass
     elif ic == 8:
         if num < 8:
-            return num + 1
+            return num // 2
         else:
-            return num + 2
+            return (num - 2) // 2
 
 def string_to_index(ic):
     ics = {"74LS04":0, "74LS08":1, "CD4001":2, "CD4011":3, "CD4070":4, "CD4071":5, "CD4077":6, "CD4081":7, "SN74LS157":8, "CD4013B":9, "74LS153":10}
     return ics[ic]
-
