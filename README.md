@@ -21,7 +21,6 @@
   - LED
   - Passive Buzzer
   - Resistor (330 Ohm)
-  - 9V Battery
 - Voltage Detector:
   - 741 IC - As comparator
   - Resistors (330 Ohm) - For voltage divider
