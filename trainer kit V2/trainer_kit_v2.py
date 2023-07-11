@@ -2,7 +2,7 @@ import machine
 from rotary_encoder_classes import *
 import utime
 from pico_i2c_lcd import I2cLcd
-from gate__tester import *
+from gate_tester import *
 i2c = machine.I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400000)
 
 #gate tester
@@ -35,7 +35,7 @@ Enc_1_SW_State = "UP"
 pointer = 0
 ic_menu_pointer = -1
 main_menu_options = ["> IC Tester", "> Voltmeter"]
-ic_tester_options = ["> 74LS04", "> 74LS08", "> CD4001", "> CD4011", "> CD4070", "> CD4071", "> CD4077", "> CD4081", "> 74LS153", "> CD4013B", "> SN74LS157"]
+ic_tester_options = ["74LS04", "74LS08", "CD4001", "CD4011", "CD4070", "CD4071", "CD4077", "CD4081", "74LS153", "CD4013B", "SN74LS157"]
 ic_options = len(ic_tester_options)
 lcd = I2cLcd(i2c, I2C_ADDR, 2, 16)
 lcd.putstr(main_menu_options[pointer])
@@ -84,7 +84,7 @@ while True:
             pointer = -1
             lcd.clear()
             ic_menu_pointer = 0
-            lcd.putstr(ic_tester_options[ic_menu_pointer])
+            lcd.putstr("> " + ic_tester_options[ic_menu_pointer])
 
         elif (pointer == -1):
             ic_tester_screen = 1
@@ -94,13 +94,8 @@ while True:
             lcd.clear()
             gates_not_working = gatetester(ic_selected)
 
-            if (len(gates_not_working) == 4):
-                lcd.putstr("   " + str(gates_not_working[0]) + "       " + str(gates_not_working[1]) + "   ")
-                lcd.putstr("   " + str(gates_not_working[2]) + "       " + str(gates_not_working[3]) + "   ")
-
-            elif(len(gates_not_working) == 6):
-                lcd.putstr("   " + str(gates_not_working[0]) + "   " + str(gates_not_working[1]) + "   " + str(gates_not_working[2]) + "   ")
-                lcd.putstr("   " + str(gates_not_working[3]) + "   " + str(gates_not_working[4]) + "   " + str(gates_not_working[5]) + "   ")
+            for i in range(len(gates_not_working)):
+                lcd.putstr(str(gates_not_working[i]) + " ")
 
         elif (pointer == -5):
             ic_tester_screen = 0
@@ -116,7 +111,7 @@ while True:
                 reading = pot_val.read_u16()
                 data = round(reading * conversion_factor, 2)
                 lcd.putstr(str(data))
-                utime.sleep(0.5)
+                utime.sleep(0.2)
                 if (Enc_1_SW.value() == False) and (Enc_1_SW_State == "UP"):
                     break
 
