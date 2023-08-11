@@ -28,25 +28,25 @@
 - 5 mm Banana Sockets
 
 **Features and Description:**
-- The circuit is powered by a 12 V adapter. The Arduino has an inbuilt 12 V to 5 V converter. For the rest of the circuit, a Buck Boost Converter is used.
+- A 12 V adapter powers the circuit. The Arduino has an inbuilt 12 V to 5 V converter. For the rest of the circuit, a Buck-Boost Converter is used.
 - Nested 'for loops' are programmed in the Arduino to provide continuous clock signals of 3 frequencies - 0.1 Hz, 1 Hz, 10 Hz.
-- The Continuity Checker can be used to debug a circuit.
-- The Voltage Detector returns a HIGH value (LED turns on) when the voltage at a given point is more than 2.5 V (to accommodate both the CMOS and TTL logic levels) in reference to the circuit ground, and returns a LOW value otherwise. A voltage divider is used between 5 V and GND to set the benchmark voltage at 2.5 V.
-- The 4511 IC is connected to a 7 segment display to convert binary input to decimal digits (0 to 9).
+- The Continuity Checker can be used to debug faulty connections in a circuit.
+- The Voltage Detector returns a HIGH value (LED turns on) when the voltage at a given point exceeds 2.5 V (to accommodate both the CMOS and TTL logic levels) in reference to the circuit ground, and returns a LOW value otherwise. A voltage divider is used between 5 V and GND to set the benchmark voltage at 2.5 V.
+- The 4511 IC is connected to a 7-segment display to convert binary input to decimal digits (0 to 9).
 - The Input LEDs can be operated using the Push Button switches connected to them.
 - There are designated signal detector pins on the Arduino, which can be used to plot the clock signals on the Serial Plotter.
 
 **Problems Encountered:**
-- TinkerCad is not a very reliable tool for large circuits; not recommended. They have also removed many components from their library.
-- Initially, we were planning to keep the clock frequencies variable, but Arduino can only run 1 infinite loop at a time. So, we decided to use nested 'for loops' to provide clock signals.
-- We were trying to use a Common Cathode 7 segment display with a 7447 IC, before we realized that that IC drives Common Anode displays.
-- We found the 7805 IC to be unstable for voltage conversion, so we switched to a Buck Boost Converter.
+- TinkerCad is not a reliable tool for large circuits; not recommended. They have also removed many components from their library.
+- Initially, we planned to keep the clock frequencies variable, but Arduino can only run one infinite loop at a time. So, we decided to use nested 'for loops' to provide clock signals.
+- We were trying to use a Common Cathode 7 segment display with a 7447 IC before we realized that that IC drives Common Anode displays.
+- We found the 7805 IC unstable for voltage conversion, so we switched to a Buck-Boost Converter.
 - When we kept the circuit on for a long time, the Input LEDs started flickering when switched ON. This issue remains unresolved. Possible reasons are:
   - The 12 V adapter could not meet the power requirements.
   - Arduino could not meet the power requirements.
   - The plastic and metal holes in the breadboard did not align, leading to loose connections.
-  - Poor soldering on Buck Boost Converter.
-- We were planning to use toggle switches in the circuit, but they were panel mount instead of PCB mount. So we switched to push button switches.
+  - Poor soldering on Buck-Boost Converter.
+- We planned to use toggle switches in the circuit, but they were panel mount instead of PCB mount. So we switched to push button switches.
 
 **Resources:**
 - KiCad - PCB Design
@@ -79,10 +79,10 @@
   - 16 Pin DIP Socket - For IC Tester
 
 **Features and Description:**
-- The circuit is powered by a 5 V power supply.
-- NE555 Timers are used in astable mode to provide continuous clock signals of 3 frequencies - 0.1 Hz, 1 Hz, 10 Hz.
+- A 5 V power supply powers the circuit.
+- state machines on the rp2040 are used in astable mode to provide continuous clock signals of 3 frequencies - 0.1 Hz, 1 Hz, 10 Hz.
 - The Continuity Checker can be used to debug a circuit.
-- The 4511 IC is connected to a 7 segment display to convert binary input to decimal digits (0 to 9).
+- The 4511 IC is connected to a 7-segment display to convert binary input to decimal digits (0 to 9).
 - The Input LEDs can be operated using the Push Button switches connected to them.
 - The rotary menu is displayed on the LCD screen and operated using the rotary encoder. It has 2 options: IC Tester and Voltmeter.
 - If 'Voltmeter' is selected, the LCD displays the voltage (in reference to the circuit GND) at the given point. To exit the voltmeter mode, click on the rotary encoder button.
@@ -96,6 +96,7 @@
 - We decided to use an I2C to connect the LCD screen to reduce the number of pins required on RPi Pico. This left extra pins for IC Tester and future expansion.
 - RPi Pico is a dual-core processor in theory, but we were unable to use its multithreading functionality. We spent a long time trying to generate clock signals from Pico on the second thread, but Pico could only process one thread at a time. We finally decided to use 555 timers to generate clock signals.
 - For the voltmeter, we wanted a range of (0, 5) V but the analog read pins of RPi Pico can take a maximum input of 3.3 V. So we used a voltage divider to map the range (0, 5) V onto (0, 3.3) V, then mapped that back to (0, 5) V in the code.
+- We were later able to implement a clock without the use of separate threads through state machines on three different pins; however, having a variable clock was still not possible, and we settled on having three constant clock signals
 
 **Resources:**
 - [Rotary Encoder with RPi Pico](https://youtu.be/sgnEUxeNxpM)
@@ -103,7 +104,8 @@
 - [Connect LCD to RPi Pico using I2C](https://www.tomshardware.com/how-to/lcd-display-raspberry-pi-pico)
 - [555 Timer IC in Astable Mode](https://youtu.be/iJYm_BGqa1A)
 - [555 Timer Frequency Calculator in Astable Mode](https://ohmslawcalculator.com/555-astable-calculator)
-
+- [State Machines on the Rpi Pico](https://www.ourpcb.com/programmable-io.html)
+  
 ## Contributors:
 - Dr. Rahul Gupta - Manager, Research Labs (Supervisor of the Project)
 - [Riya Sachdeva - EVE, BTech 2026](https://github.com/riyasach189)
