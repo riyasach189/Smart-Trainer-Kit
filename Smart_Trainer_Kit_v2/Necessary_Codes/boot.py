@@ -7,6 +7,10 @@ from pico_i2c_lcd import I2cLcd
 from gate_tester import *
 i2c = machine.I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400000)
 
+#status led
+led = Pin(25, Pin.OUT)
+led.value(1)
+
 #clocks
 sm_1.active(1)
 sm_5.active(1)
