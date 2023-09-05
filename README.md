@@ -60,33 +60,27 @@
 - Red LEDs (x10) - For Input
 - Blue LEDs (x10) - For Output
 - Resistors (330 Ohm)
-- 6 Pin Mini Push Button Square Switch Self-Locking DPDT (x10)
+- Toggle switches (x10)
 - 4511 IC + 7 Segment Display (Common Cathode)
 - Continuity Checker:
-  - LED
   - Passive Buzzer
-  - Resistor (330 Ohm)
-- Clock Generator Circuit:
-  - NE555 Timer ICs (x3)
-  - LEDs (x3)
-  - Resistors
-  - Capacitors
-- 5 mm Banana Sockets
+- 4 mm Banana Sockets
 - Rotary Menu:
   - Rotary Encoder
   - LCD (16 x 2) + I2C
   - Potentiometer - For voltmeter
   - 16 Pin DIP Socket - For IC Tester
+- CLock Generator - State machines on RPi Pico
 
 **Features and Description:**
 - A 5 V power supply powers the circuit.
-- state machines on the rp2040 are used in astable mode to provide continuous clock signals of 3 frequencies - 0.1 Hz, 1 Hz, 10 Hz.
+- State machines on the rp2040 to provide continuous clock signals of 3 frequencies - 1 Hz, 5 Hz, 10 Hz.
 - The Continuity Checker can be used to debug a circuit.
 - The 4511 IC is connected to a 7-segment display to convert binary input to decimal digits (0 to 9).
-- The Input LEDs can be operated using the Push Button switches connected to them.
+- The Input LEDs can be operated using the toggle switches connected to them.
 - The rotary menu is displayed on the LCD screen and operated using the rotary encoder. It has 2 options: IC Tester and Voltmeter.
 - If 'Voltmeter' is selected, the LCD displays the voltage (in reference to the circuit GND) at the given point. To exit the voltmeter mode, click on the rotary encoder button.
-- To use the IC Tester, plug the IC into the DIP socket (If it's a 14 Pin IC, leave the last 2 pins of the DIP Socket empty, i.e., start from the beginning of the DIP Socket). Then, select which IC you wish to test. The LCD will display 1 for every gate that is functioning and 0 for every gate that is not functioning in the IC (keeping the IC notch on the left).
+- To use the IC Tester, plug the IC into the DIP socket (If it's a 14 Pin IC, leave the last 2 pins of the DIP Socket empty, i.e., start from the beginning of the DIP Socket). Then, select which IC you wish to test. The LCD will display '[ ]' for every gate that is functioning and '[!]' for every gate that is not functioning in the IC (keeping the IC notch on the left).
 
 **Problems Encountered:**
 - RPi Pico should connect to a Windows system in theory, but we were only able to establish connection in Linux systems.
@@ -96,7 +90,11 @@
 - We decided to use an I2C to connect the LCD screen to reduce the number of pins required on RPi Pico. This left extra pins for IC Tester and future expansion.
 - RPi Pico is a dual-core processor in theory, but we were unable to use its multithreading functionality. We spent a long time trying to generate clock signals from Pico on the second thread, but Pico could only process one thread at a time. We finally decided to use 555 timers to generate clock signals.
 - For the voltmeter, we wanted a range of (0, 5) V but the analog read pins of RPi Pico can take a maximum input of 3.3 V. So we used a voltage divider to map the range (0, 5) V onto (0, 3.3) V, then mapped that back to (0, 5) V in the code.
-- We were later able to implement a clock without the use of separate threads through state machines on three different pins; however, having a variable clock was still not possible, and we settled on having three constant clock signals
+- We were later able to implement a clock without the use of separate threads through state machines on three different pins; however, having a variable clock was still not possible, and we settled on having three constant clock signals.
+- We replaced push button switches with toggle switches because they were shorting the GND and VCC plane in the ON configuration. We believe push button switches are available in 2 different pinouts, but they look the same on the outside, ie. it is not possible to tell from the outside which type of push button switch it is. Also, toggle switches offer more tactile feedback and are a better choice.
+- The biggest bottleneck in the whole design process was finding a PCB manufacturer.
+- We realised we had missed some traces in the PCB when we assembled the first prototype, so we added them later.
+- We had missed the Vcc and GND connection of the 4511 IC, and for some reason, it was causing the IC to heat up whenever we turned the RPi Pico on. This problem was resolved when we provided Vcc and GND to the IC.
 
 **Resources:**
 - [Rotary Encoder with RPi Pico](https://youtu.be/sgnEUxeNxpM)
