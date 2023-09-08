@@ -105,7 +105,6 @@
 - [State Machines on the Rpi Pico](https://www.ourpcb.com/programmable-io.html)
   
 ## Contributors:
-- Dr. Rahul Gupta - Manager, Research Labs (Supervisor of the Project)
 - [Riya Sachdeva - EVE, BTech 2026](https://github.com/riyasach189)
 - [Surat Sathi Samanta - EVE, BTech 2026](https://github.com/kio42069/)
 - [Aarav Mathur - CSSS, BTech 2026](https://github.com/13100d/)
