@@ -64,7 +64,7 @@
 - 4511 IC + 7 Segment Display (Common Cathode)
 - Continuity Checker:
   - Passive Buzzer
-- 4 mm Banana Sockets
+- 2 mm Banana Sockets
 - Rotary Menu:
   - Rotary Encoder
   - LCD (16 x 2) + I2C
