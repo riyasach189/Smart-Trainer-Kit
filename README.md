@@ -70,7 +70,7 @@
   - LCD (16 x 2) + I2C
   - Potentiometer - For voltmeter
   - 16 Pin DIP Socket - For IC Tester
-- CLock Generator - State machines on RPi Pico
+- Clock Generator - State machines on RPi Pico
 
 **Features and Description:**
 - A 5 V power supply powers the circuit.
