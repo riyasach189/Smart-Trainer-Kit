@@ -102,7 +102,7 @@
 - [Connect LCD to RPi Pico using I2C](https://www.tomshardware.com/how-to/lcd-display-raspberry-pi-pico)
 - [555 Timer IC in Astable Mode](https://youtu.be/iJYm_BGqa1A)
 - [555 Timer Frequency Calculator in Astable Mode](https://ohmslawcalculator.com/555-astable-calculator)
-- [State Machines on the Rpi Pico](https://www.ourpcb.com/programmable-io.html)
+- [State Machines on RPi Pico](https://www.ourpcb.com/programmable-io.html)
   
 ## Contributors:
 - [Riya Sachdeva - EVE, BTech 2026](https://github.com/riyasach189)
