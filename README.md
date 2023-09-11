@@ -56,29 +56,25 @@
 
 ## Version 2
 **BoM:**
-Here's the table you requested in Markdown format:
-
 ```
 | Component                                | Quantity | Price | Total Cost |
 |------------------------------------------|----------|-------|------------|
 | RPi Pico Board                           | 1        | 345   | 345        |
 | LEDs                                     | 23       | 0.8   | 18.4       |
-| Resistors (330 Ohm)                     | 27       | 0.4   | 10.8       |
+| Resistors (330 Ohm)                      | 27       | 0.4   | 10.8       |
 | Toggle switches                          | 10       | 20    | 200        |
-| 4511 IC                                 | 1        | 21    | 21         |
+| 4511 IC                                  | 1        | 21    | 21         |
 | 7 Segment Display (Common Cathode)       | 1        | 7     | 7          |
-| DIP Sockets (16 Pin)                    | 2        | 3     | 6          |
-| Passive Buzzer                          | 1        | 10    | 10         |
-| 2 mm Banana Sockets                     | 30       | 26    | 780        |
-| Rotary Encoder                          | 1        | 50    | 50         |
-| LCD (16 x 2)                            | 1        | 188   | 188        |
+| DIP Sockets (16 Pin)                     | 2        | 3     | 6          |
+| Passive Buzzer                           | 1        | 10    | 10         |
+| 2 mm Banana Sockets                      | 30       | 26    | 780        |
+| Rotary Encoder                           | 1        | 50    | 50         |
+| LCD (16 x 2)                             | 1        | 188   | 188        |
 | I2C                                      | 1        |       |            |
-| 18 mm Standoffs                         | 4        | 16    | 64         |
-| Potentiometer                           | 1        | 6     | 6          |
+| 18 mm Standoffs                          | 4        | 16    | 64         |
+| Potentiometer                            | 1        | 6     | 6          |
 |                                          |          |       | 1706.2     |
 ```
-
-This Markdown code will display the table with the specified headers and data.
 
 **Features and Description:**
 - A 5 V power supply powers the circuit.
