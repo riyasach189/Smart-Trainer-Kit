@@ -10,17 +10,17 @@
 ## Version 1
 **BoM:**
 ```markdown
-| Component                                      | Quantity | Price | Total Cost |
+| Component                                     | Quantity | Price | Total Cost |
 |-----------------------------------------------|----------|-------|------------|
 | Arduino Board                                 | 1        | 550   | 550        |
 | LEDs                                          | 22       | 0.8   | 17.6       |
-| Resistors (330 Ohm)                          | 25       | 0.4   | 10         |
-| Push Button Square Switch Self-Locking DPDT  | 10       | 5     | 50         |
+| Resistors (330 Ohm)                           | 25       | 0.4   | 10         |
+| Push Button Square Switch Self-Locking DPDT   | 10       | 5     | 50         |
 | 4511 IC                                       | 1        | 21    | 21         |
-| 7 Segment Display (Common Cathode)           | 1        | 7     | 7          |
-| Passive Buzzer                               | 1        | 10    | 10         |
-| 741 IC                                       | 1        | 9     | 9          |
-| 4 mm Banana Sockets                          | 30       | 14.5  | 435        |
+| 7 Segment Display (Common Cathode)            | 1        | 7     | 7          |
+| Passive Buzzer                                | 1        | 10    | 10         |
+| 741 IC                                        | 1        | 9     | 9          |
+| 4 mm Banana Sockets                           | 30       | 14.5  | 435        |
 |                                               |          |       | 1109.6     |
 ```
 
