@@ -8,24 +8,21 @@
 - To enhance the versatility and functionality of the proposed alternative, a microcontroller will be incorporated into the design. This addition will provide opportunities for future expansion and the inclusion of advanced features, empowering students to explore more complex digital circuits.
 
 ## Version 1
-**Components:**
-- Arduino Board
-- Red LEDs (x8) - For Input
-- Blue LEDs (x8) - For Output
-- Buck Boost Converter
-- Resistors (330 Ohm)
-- 6 Pin Mini Push Button Square Switch Self-Locking DPDT (x8)
-- Green LEDs (x3) - For Clock Signals
-- 4511 IC + 7 Segment Display (Common Cathode)
-- Continuity Checker:
-  - LED
-  - Passive Buzzer
-  - Resistor (330 Ohm)
-- Voltage Detector:
-  - 741 IC - As comparator
-  - Resistors (330 Ohm) - For voltage divider
-  - LED
-- 5 mm Banana Sockets
+**BoM:**
+```markdown
+| Component                                      | Quantity | Price | Total Cost |
+|-----------------------------------------------|----------|-------|------------|
+| Arduino Board                                 | 1        | 550   | 550        |
+| LEDs                                          | 22       | 0.8   | 17.6       |
+| Resistors (330 Ohm)                          | 25       | 0.4   | 10         |
+| Push Button Square Switch Self-Locking DPDT  | 10       | 5     | 50         |
+| 4511 IC                                       | 1        | 21    | 21         |
+| 7 Segment Display (Common Cathode)           | 1        | 7     | 7          |
+| Passive Buzzer                               | 1        | 10    | 10         |
+| 741 IC                                       | 1        | 9     | 9          |
+| 4 mm Banana Sockets                          | 30       | 14.5  | 435        |
+|                                               |          |       | 1109.6     |
+```
 
 **Features and Description:**
 - A 12 V adapter powers the circuit. The Arduino has an inbuilt 12 V to 5 V converter. For the rest of the circuit, a Buck-Boost Converter is used.
@@ -56,7 +53,7 @@
 
 ## Version 2
 **BoM:**
-```
+```markdown
 | Component                                | Quantity | Price | Total Cost |
 |------------------------------------------|----------|-------|------------|
 | RPi Pico Board                           | 1        | 345   | 345        |
