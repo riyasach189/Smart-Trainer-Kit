@@ -24,7 +24,7 @@ def blink_1hz():
 
 # Create the StateMachine with the blink_1hz program, outputting on Pin(25).
 sm_1 = rp2.StateMachine(0, blink_1hz, freq=2000, set_base=Pin(9))   # 9 is 1 hz
-sm_5 = rp2.StateMachine(1, blink_1hz, freq=10000, set_base=Pin(10))   # 10 is 0.1 hz
+sm_5 = rp2.StateMachine(1, blink_1hz, freq=10000, set_base=Pin(10))   # 10 is 5 hz
 sm_10 = rp2.StateMachine(2, blink_1hz, freq=20000, set_base=Pin(11))   # 11 is 10 hz
 
 # Set the IRQ handler to print the millisecond timestamp.
