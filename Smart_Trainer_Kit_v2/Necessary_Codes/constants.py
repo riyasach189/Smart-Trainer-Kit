@@ -1,6 +1,6 @@
 ic_tester_options = ["74LS04", "74LS08", "CD4001", "CD4011", "CD4070", "CD4071", "CD4077", "CD4081", "74LS153", "CD4013B", "SN74LS157"]
 ics = {"74LS04":0, "74LS08":1, "CD4001":2, "CD4011":3, "CD4070":4, "CD4071":5, "CD4077":6, "CD4081":7, "SN74LS157":8, "CD4013B":9, "74LS153":10}
-gpio=[16, 17, 18, 19, 20, 21, 22, 2, 3, 4, 5, 6, 7, 8]
+gpio=[2, 3, 4, 5, 6, 7, 8, 16, 17, 18, 19, 20, 21, 22]
 pinoutlist=[
     ['OUT','IN','OUT','IN','OUT','IN','OUT','OUT','IN','OUT','IN','OUT','IN','OUT'],  # 74LS04 not
     ['OUT','OUT','IN','OUT','OUT','IN','OUT','OUT','IN','OUT','OUT','IN','OUT','OUT'], # 74LS08 and
